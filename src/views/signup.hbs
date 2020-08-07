@@ -1,0 +1,89 @@
+<div class="container col-md-7">
+    <div class="card">
+        <div class="card-header bg-dark">
+            <h3 class="card-title text-white">
+                <i class="fas fa-user-plus"></i> SignUp
+            </h3>
+        </div>
+        <div class="card-body">
+            <form action="/user/signup" enctype="multipart/form-data" method="POST" class="needs-validation" novalidate>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="" class="">First Name:</label>
+                        <input class="form-control" type="text" name="firstname" id="" placeholder="First Name"
+                            required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please give a first name.
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="" class="">Last Name:</label>
+                        <input class="form-control " type="text" name="lastname" id="" placeholder="Last Name" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please give a last name.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="username" class="">Username:</label>
+                    <input class="form-control " type="text" name="username" id="" placeholder="Username" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please give a username.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="">Email:</label>
+                    <input class="form-control " type="text" name="email" id="" placeholder="Email" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please give a email.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="">Password:</label>
+                    <input class="form-control " type="password" name="password" id="" placeholder="password" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please give a password.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Description:</label>
+                    <textarea class="form-control" placeholder="Description" name="description" id="" cols="30" rows="3"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="">Avatar:</label>
+                        <div class="custom-file">
+                            <input accept="image/*" type="file" name="image" id="image" class="custom-file-input"
+                                    id="inputGroup" aria-describedby="inputGroupFileAddon">
+                                <label class="custom-file-label" for="inputGroupFile">Choose Image</label>
+                        </div>
+                    </div>
+                    <div class="avatar" id="file-preview-zone" style="visibility: hidden; display:none"></div>
+                </div>
+                
+                
+                <div class="form-group">
+                    <button class="btn btn-success">
+                        <i class="fas fa-upload"></i> SignIn
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
