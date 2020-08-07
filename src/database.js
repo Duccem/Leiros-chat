@@ -5,7 +5,7 @@ connection = createPool({
     database: 'chat',
     host:'localhost',
     user:'root',
-    password:'alex97'
+    port:'3306'
 });
 
 
