@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="/public/img/logo-personal-negro.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/1360d3158e.js" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/public/css/style.css">
@@ -17,16 +16,14 @@
 <body>
     <nav class="navbar  navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <h1 class="text-white">Chat</h1>
-            {{#if sesion}}
+            <h1 class="text-white text-center">Chat</h1>
+            {{#if user}}
             <div class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">{{sesion.username}}
-                        <img src="{{sesion.avatar}}" alt="" height="50" style="border-radius: 50%; border:solid 1px #fff;">
+                        aria-haspopup="true" aria-expanded="false">{{user.username}}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="/profile/{{sesion.username}}">Profile</a>
                         <a class="dropdown-item" href="/logout">Log Out</a>
                     </div>
                 </li>
@@ -51,7 +48,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-    <script src="/public/javascript/index.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+        <script src="/public/js/moment.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/public/js/chat.js"></script>
+        <script>
+            setVariables({{user_id}});
+        </script>
 </body>
 
 </html>

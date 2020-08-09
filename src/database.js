@@ -1,13 +1,7 @@
-const { createPool } = require('mysql2');
-
-let connection
-connection = createPool({
-    database: 'chat',
-    host:'localhost',
-    user:'root',
-    port:'3306'
-});
-
+const { createPool } = require('mysql2/promise');
+const { database } = require('./keys');
+let connection;
+connection = createPool(database);
 
 function getConnection(){
     return connection;

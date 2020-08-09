@@ -1,14 +1,59 @@
-<div class="container col-md-7">
+<div class="container col-md-12">
     <div class="card">
-        <div class="card-header  bg-dark">
-            <div class="card-title text-white text-align-center">
-                Grupos
+        <div class="card-header  bg-dark row no-gutters">
+            <h2 class="card-title text-white text-center col-md-9 mx-0" id="sala-title"></h2>
+            <div class="form-group col-md-2 mx-0">
+                <input type="text" name="" class="form-control" id="term-search" placeholder="Search term">
             </div>
         </div>
     </div>
-    <div class="card-body">
-        {{#each grupos}}
-            <p>grupo.nombre</p>
-        {{/each}}
+    <div class="card-body p-0">
+        <div class="row no-gutters">
+            <div class="col-md-2 border border-dark row no-gutters  mx-0">
+                <div class="col-md-12 col-6 col-sm-6 lists-scroll">
+                    <h3 class="text-center">Usuarios</h3>
+                    <ul class="list-group" id="lista-usuarios">
+                        {{#each users}}
+                            <div class="div dropright">
+                                <li class="list-group-item" id="userDrop{{id}}" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false" >{{username}}</li>
+                                <div class="dropdown-menu bg-dark" aria-labelledby="userDrop{{id}}">
+                                    <button class="dropdown-item bg-dark text-white" onclick="creatGroupEvent({{id}})">Enviar mensaje</button>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="col-md-12 col-6 col-sm-6 lists-scroll">
+                    <h3 class="text-center">Chats</h3>
+                    <ul class="list-group" id="lista-grupos">
+                        {{#each grupos}}
+                            {{#ifCon tipo '==' '1'}}
+                                <li class="list-group-item" onclick="getMasseges({{id}})">{{nombre}}</li>
+                            {{else}}
+                                <li class="list-group-item" onclick="getMasseges({{id}})">{{username}}</li>
+                            {{/ifCon}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10 mx-0 border border-dark">
+                <div class="chat-container" id="chat-container">
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="card-footer bg-dark">
+        <div class="form-row justify-content-center">
+            <div class="form-group col-md-10 col-sm-12 col-12">
+                <input type="text" name="" class="form-control" id="input-message">
+            </div>
+            <div class="form-group col-md-2 col-sm-12 col-12">
+                <button class="btn btn-primary btn-block" id="button-message">Enviar</button>
+            </div>
+        </div>
+        
     </div>
 </div>
