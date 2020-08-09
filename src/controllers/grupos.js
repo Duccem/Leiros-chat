@@ -1,4 +1,5 @@
 const { getConnection } =  require('../database');
+const { getsocket } = require('../sockets');
 const con = getConnection();
 
 module.exports = {
@@ -67,6 +68,8 @@ module.exports = {
                 grupo_id: response[0].insertId
             };
             await con.query('INSERT INTO grupo_user set ?', [newGroupUser]);
+            getsocket().io.emit(`new-chat-${newGroupUser.user1_id}`)
+            getsocket().io.emit(`new-chat-${newGroupUser.user2_id}`)
             return res.status(200).json({insertId: newGroupUser.grupo_id});
         } catch (error) {
             console.log(error)

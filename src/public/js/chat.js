@@ -181,6 +181,9 @@ function replacer(coincValues, content){
 
 function setVariables(id){
     user_id = id
+    socket.on(`new-chat-${user_id}`, async ()=>{
+        await getGrupos()
+    })
 }
 
 function setChatEvent(){
